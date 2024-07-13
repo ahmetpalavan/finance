@@ -14,6 +14,7 @@ interface Props {
 }
 
 export const NavButton: FC<Props> = ({ path, name, isActive }) => {
+  console.log('');
   return (
     <Button
       asChild
