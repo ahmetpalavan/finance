@@ -1,14 +1,14 @@
-import { Trash } from 'lucide-react';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Input } from '~/components/ui/input';
-import { Button } from '~/components/ui/button';
-import { insertAccountSchema } from '~/db/schema';
-import { Form, FormControl, FormDescription, FormField, FormMessage, FormItem, FormLabel, useFormField } from '~/components/ui/form';
+import { Trash } from 'lucide-react';
 import { useCallback, useTransition } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Button } from '~/components/ui/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '~/components/ui/form';
+import { Input } from '~/components/ui/input';
+import { insertCategoriesSchema } from '~/db/schema';
 
-const formSchema = insertAccountSchema.pick({
+const formSchema = insertCategoriesSchema.pick({
   name: true,
 });
 
@@ -22,7 +22,7 @@ type Props = {
   disabled?: boolean;
 };
 
-export const AccountForm = ({ id, defaultValues, onSubmit, onDelete, disabled }: Props) => {
+export const CategoryForm = ({ id, defaultValues, onSubmit, onDelete, disabled }: Props) => {
   const [isPending, startTransition] = useTransition();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -51,19 +51,19 @@ export const AccountForm = ({ id, defaultValues, onSubmit, onDelete, disabled }:
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input disabled={disabled} placeholder='e.g. Cash, Bank, Credit Card' {...field} className='mt-4' />
+                <Input disabled={disabled} placeholder='e.g. Food, Shopping, Rent' {...field} className='mt-4' />
               </FormControl>
               <FormMessage>{form.formState.errors.name?.message}</FormMessage>
             </FormItem>
           )}
         />
         <Button type='submit' disabled={isPending || disabled || !form.formState.isValid} className='w-full mt-4'>
-          {id ? 'Save' : 'Create'}
+          {id ? 'Save' : 'Create Category'}
         </Button>
         {!!id && (
           <Button type='button' variant='destructive' disabled={isPending || disabled} onClick={handleDelete} className='w-full mt-4'>
             <Trash size={16} />
-            Delete
+            Delete Category
           </Button>
         )}
       </form>
