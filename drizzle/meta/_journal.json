@@ -15,6 +15,13 @@
       "when": 1721172259472,
       "tag": "0001_quiet_phantom_reporter",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1721211629848,
+      "tag": "0002_bored_doctor_strange",
+      "breakpoints": true
     }
   ]
 }
