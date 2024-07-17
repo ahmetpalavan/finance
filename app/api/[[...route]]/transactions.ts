@@ -227,7 +227,7 @@ const app = new Hono()
           })
           .from(transactions)
           .innerJoin(accounts, eq(transactions.accountId, accounts.id))
-          .where(and(eq(accounts.userId, auth.userId), inArray(transactions.id, values.ids), eq(accounts.id, auth.userId)))
+          .where(and(eq(accounts.userId, auth.userId), inArray(transactions.id, values.ids)))
       );
 
       const data = await db
@@ -279,7 +279,7 @@ const app = new Hono()
           })
           .from(transactions)
           .innerJoin(accounts, eq(transactions.accountId, accounts.id))
-          .where(and(eq(accounts.userId, auth.userId), eq(transactions.id, id), eq(accounts.id, auth.userId)))
+          .where(and(eq(accounts.userId, auth.userId), eq(transactions.id, id)))
       );
 
       const [data] = await db
@@ -332,7 +332,7 @@ const app = new Hono()
           })
           .from(transactions)
           .innerJoin(accounts, eq(transactions.accountId, accounts.id))
-          .where(and(eq(accounts.userId, auth.userId), eq(transactions.id, id), eq(accounts.id, auth.userId)))
+          .where(and(eq(accounts.userId, auth.userId), eq(transactions.id, id)))
       );
 
       const [data] = await db
