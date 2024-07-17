@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '
 import { insertCategoriesSchema } from '~/db/schema';
 import { useNewCategory } from '../hooks/use-new-category';
 import { CategoryForm } from './category-form';
-import { useCreateAccount } from '../api/use-create-category';
+import { useCreateCategory } from '../api/use-create-category';
 
 const formSchema = insertCategoriesSchema.pick({
   name: true,
@@ -16,7 +16,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const NewCategorySheet = () => {
   const { isOpen, onClose } = useNewCategory();
-  const mutation = useCreateAccount();
+  const mutation = useCreateCategory();
 
   const onSubmit = useCallback((values: FormValues) => {
     mutation.mutateAsync(values).then(() => {

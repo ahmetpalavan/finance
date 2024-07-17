@@ -27,6 +27,9 @@ export const useEditAccount = (id?: string) => {
       queryClient.invalidateQueries({
         queryKey: ['accounts'],
       });
+      queryClient.invalidateQueries({
+        queryKey: ['transactions'],
+      });
     },
     onError: (error) => {
       toast.error(error.message);

@@ -44,7 +44,7 @@ export const AccountForm = ({ id, defaultValues, onSubmit, onDelete, disabled }:
 
   return (
     <Form {...form}>
-      <form className='space-y-12' onSubmit={form.handleSubmit(handleSubmit)}>
+      <form className='space-y-0' onSubmit={form.handleSubmit(handleSubmit)}>
         <FormField
           name='name'
           control={form.control}
