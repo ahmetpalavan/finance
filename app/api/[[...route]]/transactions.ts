@@ -42,6 +42,7 @@ const app = new Hono()
       const data = await db
         .select({
           id: transactions.id,
+          date: transactions.date,
           category: categories.name,
           categoryId: transactions.categoryId,
           payee: transactions.payee,
@@ -49,7 +50,6 @@ const app = new Hono()
           notes: transactions.notes,
           account: accounts.name,
           accountId: transactions.accountId,
-          date: transactions.date,
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))
@@ -166,9 +166,11 @@ const app = new Hono()
     clerkMiddleware(),
     zValidator(
       'json',
-      z.object({
-        transactions: z.array(insertTransactionsSchema.omit({ id: true })),
-      })
+      z.array(
+        insertTransactionsSchema.omit({
+          id: true,
+        })
+      )
     ),
     async (c) => {
       const auth = getAuth(c);
@@ -186,7 +188,7 @@ const app = new Hono()
       const data = await db
         .insert(transactions)
         .values(
-          values.transactions.map((transaction) => ({
+          values.map((transaction) => ({
             id: createId(),
             ...transaction,
           }))

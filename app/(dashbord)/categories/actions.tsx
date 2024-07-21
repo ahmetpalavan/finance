@@ -27,7 +27,7 @@ export const Actions = ({ id }: Props) => {
         },
       });
     }
-  }, []);
+  }, [confirm, deleteMutation, onClose]);
   return (
     <>
       <ConfirmDialog />

@@ -26,7 +26,6 @@ type FormValues = z.infer<typeof formSchema>;
 const EditTransactionSheet = () => {
   const { onClose, open, id } = useOpenTransaction();
   const transactionQuery = useGetTransaction(id);
-  console.log('🚀 ~ EditTransactionSheet ~ transactionQuery:', transactionQuery.data);
   const { mutateAsync, isPending: transactionPending } = useEditTransaction(id);
   const deleteMutation = useDeleteTransaction(id);
   const createMutation = useCreateTransaction();

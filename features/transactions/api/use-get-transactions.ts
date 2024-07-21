@@ -1,14 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import { client } from '~/lib/hono';
 import { useSearchParams } from 'next/navigation';
-import { convertAmountFromMiliunits } from '~/lib/utils';
+import { client } from '~/lib/hono';
 
 export const useGetTransactions = () => {
   const params = useSearchParams();
 
-  const from = params.get('from') ?? '';
-  const to = params.get('to') ?? '';
-  const accountId = params.get('accountId') ?? '';
+  const from = params.get('from') || '';
+  const to = params.get('to') || '';
+  const accountId = params.get('accountId') || '';
 
   const query = useQuery({
     queryKey: ['transactions', { from, to, accountId }],
@@ -26,6 +25,7 @@ export const useGetTransactions = () => {
       }
 
       const { data } = await response.json();
+      console.log('🚀 ~ queryFn: ~ data:', data);
       return data;
     },
   });
