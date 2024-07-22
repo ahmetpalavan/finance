@@ -7,7 +7,7 @@ interface TableHeadSelectProps {
   onSelect: (columnIndex: number, value: string | null) => void;
 }
 
-const options = ['date', 'amount', 'payee', 'note'];
+const options = ['date', 'amount', 'payee'];
 
 export const TableHeadSelect = ({ columnIndex, selected, onSelect }: TableHeadSelectProps) => {
   const currentSelect = selected[`column_${columnIndex}`];
@@ -19,10 +19,10 @@ export const TableHeadSelect = ({ columnIndex, selected, onSelect }: TableHeadSe
           currentSelect && 'text-blue-500'
         )}
       >
-        <SelectValue placeholder={selected[columnIndex] || 'Select'} />
+        <SelectValue placeholder='Skip' />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value='select'>Select</SelectItem>
+        <SelectItem value='skip'>Skip</SelectItem>
         {options.map((option) => {
           const disabled = Object.values(selected).includes(option) && currentSelect !== option;
           return (

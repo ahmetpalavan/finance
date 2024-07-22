@@ -34,7 +34,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: ImportCardProps) => {
         }
       }
 
-      if (value === 'select') {
+      if (value === 'skip') {
         value = null;
       }
       newSelectedColumns[`column_${columnIndex}`] = value;

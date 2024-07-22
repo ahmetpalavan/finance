@@ -102,6 +102,8 @@ const EditTransactionSheet = () => {
         notes: '',
       };
 
+  console.log('🚀 ~ EditTransactionSheet ~ defaultValues:', defaultValues);
+
   return (
     <>
       <ConfirmDialog />

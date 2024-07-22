@@ -10,11 +10,11 @@ import { transactions as transactionSchema } from '~/db/schema';
 import { useSelectAccount } from '~/features/accounts/hooks/use-select-account';
 import { useBulkCreateTransactions } from '~/features/transactions/api/use-bulk-create-transactions';
 import { useBulkDeleteTransactions } from '~/features/transactions/api/use-bulk-delete-transactions';
-import { useGetTransactions } from '~/features/transactions/api/use-get-transactions';
 import { useNewTransaction } from '~/features/transactions/hooks/use-new-transaction';
 import { ImportCard } from './import-card';
 import { UploadButton } from './upload-button';
 import { columns } from './columns';
+import { useGetTransactions } from '~/features/transactions/api/use-get-transactions';
 
 enum TransactionType {
   LIST = 'LIST',
@@ -45,14 +45,13 @@ const AccountsPage = () => {
   const { onOpen } = useNewTransaction();
   const getTransactions = useGetTransactions();
   const createTransactions = useBulkCreateTransactions();
-  console.log('🚀 ~ AccountsPage ~ createTransactions:', createTransactions.data);
   const deleteTransactions = useBulkDeleteTransactions();
   const transactions = getTransactions.data || [];
+  console.log('🚀 ~ AccountsPage ~ transactions:', transactions);
 
   const isDisabled = deleteTransactions.isPending || getTransactions.isLoading;
 
   const onSubmitImport = async (values: (typeof transactionSchema.$inferInsert)[]) => {
-    console.log('🚀 ~ onSubmitImport ~ values:', values);
     const accountId = await confirm();
     if (!accountId) return;
 
@@ -66,7 +65,6 @@ const AccountsPage = () => {
         onCancelImport();
       },
     });
-    console.log('🚀 ~ onSubmitImport ~ onSuccess: ~ data:', data);
   };
 
   if (getTransactions.isLoading) {

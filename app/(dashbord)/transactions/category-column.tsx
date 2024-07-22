@@ -1,4 +1,5 @@
 import { TriangleAlert } from 'lucide-react';
+import { useCallback } from 'react';
 import { useOpenCategory } from '~/features/categories/hooks/use-open-category';
 import { useOpenTransaction } from '~/features/transactions/hooks/use-open-account';
 import { cn } from '~/lib/utils';
@@ -13,11 +14,13 @@ export const CategoryColumn = ({ id, categoryId, category }: CategoryColumnProps
   const { onOpen } = useOpenCategory();
   const { onOpen: onOpenTransaction } = useOpenTransaction();
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     if (categoryId) {
       onOpen(categoryId);
+    } else {
+      onOpenTransaction(id);
     }
-  };
+  }, [categoryId, id, onOpen, onOpenTransaction]);
 
   return (
     <div className={cn('cursor-pointer hover:underline gap-1 flex items-center', !category && 'text-red-500')} onClick={onClick}>
