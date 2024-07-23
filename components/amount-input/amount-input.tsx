@@ -3,6 +3,7 @@ import { Info, MinusCircle, PlusCircle } from 'lucide-react';
 import { cn } from '~/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { Button } from '../ui/button';
+import { useCallback } from 'react';
 
 type Props = {
   value: string;
@@ -16,11 +17,11 @@ export const AmountInput = ({ value, onChange, placeholder, disabled }: Props) =
   const isIncome = parsedValue > 0;
   const isExpense = parsedValue < 0;
 
-  const isReserveValue = () => {
+  const isReserveValue = useCallback(() => {
     if (!value) return;
     const newValue = parseFloat(value) * -1;
     onChange(newValue.toString());
-  };
+  }, [value, onChange]);
 
   return (
     <div className='relative'>
