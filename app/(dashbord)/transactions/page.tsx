@@ -47,7 +47,6 @@ const AccountsPage = () => {
   const createTransactions = useBulkCreateTransactions();
   const deleteTransactions = useBulkDeleteTransactions();
   const transactions = getTransactions.data || [];
-  console.log('🚀 ~ AccountsPage ~ transactions:', transactions);
 
   const isDisabled = deleteTransactions.isPending || getTransactions.isLoading;
 

@@ -20,3 +20,11 @@ export function formatCurrency(amount: number) {
     minimumFractionDigits: 2,
   }).format(amount);
 }
+
+export const calculatePercentageChange = (previous: number, current: number) => {
+  if (previous === 0) {
+    return previous === current ? 0 : 100;
+  }
+
+  return ((current - previous) / previous) * 100;
+};

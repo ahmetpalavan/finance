@@ -33,7 +33,6 @@ export const AccountForm = ({ id, defaultValues, onSubmit, onDelete, disabled }:
     startTransition(async () => {
       onSubmit(values);
     });
-    console.log('🚀 ~ startTransition ~ values:', values);
   };
 
   const handleDelete = useCallback(() => {

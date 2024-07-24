@@ -58,12 +58,11 @@ export const TransactionForm = ({
     defaultValues: defaultValues,
   });
 
-  const handleSubmit = (values: FormValues) => {
-    console.log(values, 'values');
+  const handleSubmit = useCallback((values: FormValues) => {
     const amount = parseFloat(values.amount);
     const amountInMiliunits = convertAmountToMiliunits(amount);
     onSubmit({ ...values, amount: amountInMiliunits });
-  };
+  }, []);
 
   const handleDelete = useCallback(() => {
     startTransition(async () => {
