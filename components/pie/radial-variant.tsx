@@ -1,5 +1,5 @@
-import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
-import { formatPercentage } from '~/lib/utils';
+import { Cell, Legend, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { formatCurrency } from '~/lib/utils';
 import { CategoryTooltip } from './category-tooltip';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', '#FF1919'];
@@ -11,10 +11,20 @@ type Props = {
   }[];
 };
 
-export const PieVariant = ({ data }: Props) => {
+export const RadialVariant = ({ data }: Props) => {
   return (
     <ResponsiveContainer width='100%' height={350}>
-      <PieChart>
+      <RadialBarChart
+        cx='50%'
+        cy='30%'
+        barSize={10}
+        innerRadius='90%'
+        outerRadius='40%'
+        data={data.map((entry, index) => ({
+          ...entry,
+          fill: COLORS[index % COLORS.length],
+        }))}
+      >
         <Legend
           layout='horizontal'
           align='right'
@@ -27,7 +37,7 @@ export const PieVariant = ({ data }: Props) => {
                   <li key={`item-${index}`} className='flex items-center space-x-2'>
                     <span className='size-2 rounded-full' style={{ backgroundColor: entry.color }} />
                     <span className='text-sm text-muted-foreground'>{entry.value}</span>
-                    <span>{formatPercentage(entry.payload.percent * 100)}</span>
+                    <span>{formatCurrency(entry.payload.value)}</span>
                   </li>
                 ))}
               </ul>
@@ -35,24 +45,13 @@ export const PieVariant = ({ data }: Props) => {
           }}
         />
         <Tooltip content={<CategoryTooltip />} />
-        <Pie
-          data={data}
-          dataKey='value'
-          labelLine={false}
-          nameKey='name'
-          cx='50%'
-          cy='50%'
-          outerRadius={90}
-          innerRadius={60}
-          paddingAngle={2}
-          fill='#8884d8'
-        >
+        <RadialBar label={{ fill: '#fff', position: 'insideStart', fontSize: '12px' }} background dataKey={'value'}>
           {data.map((_entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
-        </Pie>
+        </RadialBar>
         <Tooltip />
-      </PieChart>
+      </RadialBarChart>
     </ResponsiveContainer>
   );
 };
