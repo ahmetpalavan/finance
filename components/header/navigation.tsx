@@ -12,7 +12,7 @@ import { merriweather } from '~/theme/typography';
 
 const routes = [
   {
-    path: '/overview',
+    path: '/',
     name: 'Overview',
   },
   {
@@ -26,10 +26,6 @@ const routes = [
   {
     path: '/categories',
     name: 'Categories',
-  },
-  {
-    path: '/settings',
-    name: 'Settings',
   },
 ];
 
@@ -49,22 +45,13 @@ export const Navigation = () => {
 
   if (isMobile) {
     return (
-      <Sheet
-        open={isOpen}
-        onOpenChange={setIsOpen}
-      >
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger>
-          <Button
-            size='sm'
-            variant='outline'
-          >
+          <Button size='sm' variant='outline'>
             <Menu className='size-4' />
           </Button>
         </SheetTrigger>
-        <SheetContent
-          side={'left'}
-          className='px-2'
-        >
+        <SheetContent side={'left'} className='px-2'>
           <nav className='flex flex-col gap-y-4 pt-6 items-center'>
             {routes.map((route) => (
               <Button
@@ -89,12 +76,7 @@ export const Navigation = () => {
   return (
     <nav className='hidden lg:flex gap-x-2 items-center overflow-x-auto'>
       {routes.map((route, index) => (
-        <NavButton
-          key={index}
-          path={route.path}
-          name={route.name}
-          isActive={pathname === route.path}
-        />
+        <NavButton key={index} path={route.path} name={route.name} isActive={pathname === route.path} />
       ))}
     </nav>
   );
