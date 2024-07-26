@@ -30,7 +30,7 @@ export const AccountFilter = () => {
       const url = qs.stringifyUrl({ url: pathname, query }, { skipEmptyString: true, skipNull: true });
       router.push(url);
     },
-    [search, pathname]
+    [search, pathname, from, to]
   );
 
   return (
