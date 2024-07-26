@@ -79,7 +79,7 @@ export const formattedRange = (period?: Period) => {
     return `${format(period.from, 'LLL dd')} - ${format(defaultTo, 'LLL dd')}`;
   }
 
-  return format(period.from, 'LLL dd');
+  return `${format(period.from, 'LLL dd')} - ${format(period.to, 'LLL dd')}`;
 };
 
 export const formatPercentage = (
