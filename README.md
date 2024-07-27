@@ -17,13 +17,12 @@ Finance App, kişisel finansmanınızı takip etmenizi sağlayan bir web uygulam
 - **TanStack Query (React Query)**: Veri getirme, önbellekleme ve güncelleme için
 - **Date-fns**: Tarih ve zaman işlemleri için
 - **Tailwind CSS**: Stil
+- **shadcn-ui**: Kullanıcı Arayüzü Bileşenleri
 - **Zustand**: Durum Yönetimi
 - **React Hook Form**: Form Yönetimi
 - **Recharts**: Grafikler
 - **Drizzle ORM ile PostgreSQL**: Veritabanı
 - **Clerk**: Kimlik Doğrulama
-- **Diğer Kütüphaneler**:
-  - Radix UI bileşenleri
 
 ## Kurulum ve Çalıştırma
 
