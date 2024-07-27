@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Finance App
 
-## Getting Started
+Finance App, kişisel finansmanınızı takip etmenizi sağlayan bir web uygulamasıdır. Bu proje, kullanıcıların gelir ve giderlerini izlemelerine yardımcı olur. Uygulama, kullanıcı dostu bir arayüze sahiptir ve çeşitli özellikler sunar.
 
-First, run the development server:
+## Proje Özellikleri
+
+- **İşlem Görüntüleme**: Tüm işlemlerinizin listesini görüntüleyin.
+- **İşlem Filtreleme**: Hesap ve tarih aralığına göre işlemleri filtreleyin.
+- **Hesap Ekleme/Düzenleme/Silme**: Hesaplarınızı kolayca yönetin.
+- **Kategori Ekleme/Düzenleme/Silme**: İşlemlerinizi kategorilere ayırarak organize edin.
+- **Yeni İşlem Ekleme**: Tarih, hesap, kategori, alıcı, tutar ve notlar gibi detaylarla kolayca yeni işlemler ekleyin.
+
+## Kullanılan Teknolojiler
+
+- **Framework**: Next.js
+- **Stil**: Tailwind CSS
+- **Durum Yönetimi**: Zustand
+- **Form Yönetimi**: React Hook Form
+- **Grafikler**: Recharts
+- **Veritabanı**: Drizzle ORM ile PostgreSQL
+- **Kimlik Doğrulama**: Clerk
+- **Diğer Kütüphaneler**:
+  - Radix UI bileşenleri
+  - TanStack React Query veri getirme
+  - Date-fns tarih manipülasyonu
+
+## Kurulum ve Çalıştırma
+
+Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyin:
+
+### Gerekli Bağımlılıkların Yüklenmesi
+
+Öncelikle gerekli bağımlılıkları yüklemek için:
+
+```bash
+npm install
+```
+
+### Geliştirme Sunucusunu Başlatma
+
+Uygulamayı yerel ortamda çalıştırmak için:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bu komut, uygulamanın geliştirme sunucusunu başlatacak ve tarayıcınızda http://localhost:3000 adresinde açacaktır.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Üretim İçin Derleme
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Uygulamayı üretim için derlemek için:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Komutlar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **dev**: Geliştirme sunucusunu başlatır.
+- **build**: Uygulamayı üretim için derler.
+- **start**: Uygulamayı üretim modunda başlatır.
+- **lint**: ESLint ile kodu kontrol eder.
+- **db:generate**: Veritabanı şemasını oluşturur.
+- **db:migrate**: Veritabanı göçlerini çalıştırır.
+- **db:seed**: Özel veritabanı scriptlerini çalıştırır.
+- **db:studio**: Drizzle ORM stüdyosunu açar.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Canlı Demo
 
-## Deploy on Vercel
+Uygulamanın canlı demosunu buradan inceleyebilirsiniz.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Ekran Görüntüleri
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Dashboard
+
+![Dashboard Ekran Görüntüsü](./screenshots/overview.png)
+
+### Transactions
+
+![Transaction Ekran Görüntüsü](./screenshots/transaction-history.png)
+![Transaction Ekleme Ekran Görüntüsü](./screenshots/create-transaction.png)
+![Transaction Editleme Ekran Görüntüsü](./screenshots/edit-transaction.png)
+
+### Accounts
+
+![Accounts Ekran Görüntüsü](./screenshots/accounts.png)
+
+## Canlı Demo
+
+Uygulamanın canlı demosunu [buradan](https://finance-jade.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffinance-jade.vercel.app%2F) inceleyebilirsiniz.
+
+## Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için [LICENSE dosyasına](LICENSE) bakın.
