@@ -12,17 +12,18 @@ Finance App, kişisel finansmanınızı takip etmenizi sağlayan bir web uygulam
 
 ## Kullanılan Teknolojiler
 
-- **Framework**: Next.js
-- **Stil**: Tailwind CSS
-- **Durum Yönetimi**: Zustand
-- **Form Yönetimi**: React Hook Form
-- **Grafikler**: Recharts
-- **Veritabanı**: Drizzle ORM ile PostgreSQL
-- **Kimlik Doğrulama**: Clerk
+- **Next.js**: Framework
+- **TypeScript**: Programlama Dili
+- **TanStack Query (React Query)**: Veri getirme, önbellekleme ve güncelleme için
+- **Date-fns**: Tarih ve zaman işlemleri için
+- **Tailwind CSS**: Stil
+- **Zustand**: Durum Yönetimi
+- **React Hook Form**: Form Yönetimi
+- **Recharts**: Grafikler
+- **Drizzle ORM ile PostgreSQL**: Veritabanı
+- **Clerk**: Kimlik Doğrulama
 - **Diğer Kütüphaneler**:
   - Radix UI bileşenleri
-  - TanStack React Query veri getirme
-  - Date-fns tarih manipülasyonu
 
 ## Kurulum ve Çalıştırma
 
