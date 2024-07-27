@@ -88,7 +88,3 @@ Uygulamanın canlı demosunu buradan inceleyebilirsiniz.
 ## Canlı Demo
 
 Uygulamanın canlı demosunu [buradan](https://finance-jade.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffinance-jade.vercel.app%2F) inceleyebilirsiniz.
-
-## Lisans
-
-Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için [LICENSE dosyasına](LICENSE) bakın.
