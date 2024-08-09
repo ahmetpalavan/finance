@@ -1,75 +1,72 @@
 # Finance App
 
-Finance App, kişisel finansmanınızı takip etmenizi sağlayan bir web uygulamasıdır. Bu proje, kullanıcıların gelir ve giderlerini izlemelerine yardımcı olur. Uygulama, kullanıcı dostu bir arayüze sahiptir ve çeşitli özellikler sunar.
+Finance App is a web application that allows you to track your personal finances. This project helps users monitor their income and expenses. The application features a user-friendly interface and offers a variety of functionalities.
 
-## Proje Özellikleri
+## Project Features
 
-- **İşlem Görüntüleme**: Tüm işlemlerinizin listesini görüntüleyin.
-- **İşlem Filtreleme**: Hesap ve tarih aralığına göre işlemleri filtreleyin.
-- **Hesap Ekleme/Düzenleme/Silme**: Hesaplarınızı kolayca yönetin.
-- **Kategori Ekleme/Düzenleme/Silme**: İşlemlerinizi kategorilere ayırarak organize edin.
-- **Yeni İşlem Ekleme**: Tarih, hesap, kategori, alıcı, tutar ve notlar gibi detaylarla kolayca yeni işlemler ekleyin.
+- **Transaction Viewing**: View a list of all your transactions.
+- **Transaction Filtering**: Filter transactions by account and date range.
+- **Add/Edit/Delete Accounts**: Easily manage your accounts.
+- **Add/Edit/Delete Categories**: Organize your transactions by categorizing them.
+- **Add New Transaction**: Quickly add new transactions with details like date, account, category, recipient, amount, and notes.
 
-## Kullanılan Teknolojiler
+## Technologies Used
 
 - **Next.js**: Framework
-- **TypeScript**: Programlama Dili
-- **TanStack Query (React Query)**: Veri getirme, önbellekleme ve güncelleme için
-- **Date-fns**: Tarih ve zaman işlemleri için
-- **Tailwind CSS**: Stil
-- **shadcn-ui**: Kullanıcı Arayüzü Bileşenleri
-- **Zustand**: Durum Yönetimi
-- **React Hook Form**: Form Yönetimi
-- **Recharts**: Grafikler
-- **Drizzle ORM ile PostgreSQL**: Veritabanı
-- **Clerk**: Kimlik Doğrulama
+- **TypeScript**: Programming Language
+- **TanStack Query (React Query)**: Data fetching, caching, and updating
+- **Date-fns**: Date and time handling
+- **Tailwind CSS**: Styling
+- **shadcn-ui**: UI Components
+- **Zustand**: State Management
+- **React Hook Form**: Form Management
+- **Recharts**: Charts
+- **Drizzle ORM with PostgreSQL**: Database
+- **Clerk**: Authentication
 
-## Kurulum ve Çalıştırma
+## Installation and Setup
 
-Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyin:
+Follow the steps below to run the project locally:
 
-### Gerekli Bağımlılıkların Yüklenmesi
+### Install Dependencies
 
-Öncelikle gerekli bağımlılıkları yüklemek için:
+First, install the necessary dependencies:
 
 ```bash
 npm install
+
 ```
 
-### Geliştirme Sunucusunu Başlatma
+### Start Development Server
 
-Uygulamayı yerel ortamda çalıştırmak için:
+To run the application locally:
 
 ```bash
 npm run dev
 ```
 
-Bu komut, uygulamanın geliştirme sunucusunu başlatacak ve tarayıcınızda http://localhost:3000 adresinde açacaktır.
+This command will start the development server and open the application in your browser at http://localhost:3000.
 
-### Üretim İçin Derleme
+### Build for Production
 
-Uygulamayı üretim için derlemek için:
+To build the application for production:
 
 ```bash
 npm run build
 ```
 
-## Komutlar
+## Commands
 
-- **dev**: Geliştirme sunucusunu başlatır.
-- **build**: Uygulamayı üretim için derler.
-- **start**: Uygulamayı üretim modunda başlatır.
-- **lint**: ESLint ile kodu kontrol eder.
-- **db:generate**: Veritabanı şemasını oluşturur.
-- **db:migrate**: Veritabanı göçlerini çalıştırır.
-- **db:seed**: Özel veritabanı scriptlerini çalıştırır.
-- **db:studio**: Drizzle ORM stüdyosunu açar.
+- **dev**: Starts the development server.
+- **build**: Builds the application for production.
+- **start**: Starts the application in production mode.
+- **lint**: Runs ESLint to check the code.
+- **db:generate**: Generates the database schema.
+- **db:migrate**: Runs the database migrations.
+- **db:seed**: Runs custom database scripts.
+- **db:studio**: Opens the Drizzle ORM studio.
 
-### Canlı Demo
-
-Uygulamanın canlı demosunu buradan inceleyebilirsiniz.
-
-## Ekran Görüntüleri
+## Screenshots
 
 ### Dashboard
 
@@ -85,6 +82,6 @@ Uygulamanın canlı demosunu buradan inceleyebilirsiniz.
 
 ![Accounts Ekran Görüntüsü](./screenshots/accounts.png)
 
-## Canlı Demo
+## Live Demo
 
 Uygulamanın canlı demosunu [buradan](https://finance-jade.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffinance-jade.vercel.app%2F) inceleyebilirsiniz.
