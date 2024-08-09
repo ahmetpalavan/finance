@@ -84,4 +84,4 @@ npm run build
 
 ## Live Demo
 
-Uygulamanın canlı demosunu [buradan](https://finance-jade.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffinance-jade.vercel.app%2F) inceleyebilirsiniz.
+You can check out the live demo of the application [here](https://finance-jade.vercel.app/sign-in?redirect_url=https%3A%2F%2Ffinance-jade.vercel.app%2F).
